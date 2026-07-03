@@ -1,0 +1,19 @@
+{
+  "logistic_regression": {
+    "cv_recall_mean": 0.8333333333333333,
+    "cv_recall_std": 0.14907119849998599
+  },
+  "random_forest": {
+    "cv_recall_mean": 0.7666666666666667,
+    "cv_recall_std": 0.16996731711975951
+  },
+  "xgboost": {
+    "cv_recall_mean": 0.7666666666666667,
+    "cv_recall_std": 0.16996731711975951
+  },
+  "cnn_bilstm": {
+    "cv_recall_mean": 1.0,
+    "cv_recall_std": 0.0,
+    "note": "validation-split recall (held-out fold), not k-fold CV -- k-fold retraining of a deep model is expensive; see evaluate.py for the proper held-out test-set comparison across all 4 models."
+  }
+}

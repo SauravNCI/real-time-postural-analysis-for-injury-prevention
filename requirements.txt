@@ -1,0 +1,37 @@
+# IMPORTANT: mediapipe>=0.10.30 removed the legacy `mp.solutions.pose` API
+# entirely. Versions 0.10.22-0.10.29 (which still had it) have also been
+# pulled from PyPI, so there is no installable version left with the old
+# API. This project uses the current Tasks API instead, via
+# src/pose_backend.py -- biomechanics.py, extract_real_dataset.py,
+# pose_extraction.py, live_app.py, and the Django app all go through that
+# module, so you never touch mediapipe's API directly.
+# First run downloads a small model file (~30MB) automatically -- see
+# pose_backend.py's docstring if that download fails on your network.
+mediapipe
+numpy
+
+# IMPORTANT: use Python 3.9-3.12 for this project. mediapipe only ships
+# wheels for 3.9-3.12 -- it will fail to install on Python 3.13+. Create
+# your venv with a compatible interpreter, e.g.: py -3.11 -m venv venv
+
+# --- offline pipeline: feature engineering, training, evaluation ---
+pandas
+scikit-learn
+xgboost
+shap
+matplotlib
+seaborn
+statsmodels
+joblib
+
+# --- deep learning (CNN-BiLSTM) ---
+tensorflow-cpu   # use `tensorflow` instead if you have a CUDA GPU available
+
+# --- video / pose estimation / live app ---
+opencv-python
+
+# --- Django real-time web app ---
+django
+
+# --- notebooks (optional, only needed to run the .ipynb files) ---
+notebook

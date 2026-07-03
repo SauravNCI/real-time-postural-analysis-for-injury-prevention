@@ -1,0 +1,81 @@
+{
+  "metrics": [
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.7916666666666666,
+      "precision": 0.6666666666666666,
+      "recall": 0.5714285714285714,
+      "f1": 0.6153846153846154,
+      "meets_recall_target (>=0.85)": false
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.8333333333333334,
+      "precision": 0.8,
+      "recall": 0.5714285714285714,
+      "f1": 0.6666666666666666,
+      "meets_recall_target (>=0.85)": false
+    },
+    {
+      "model": "xgboost",
+      "accuracy": 0.875,
+      "precision": 1.0,
+      "recall": 0.5714285714285714,
+      "f1": 0.7272727272727273,
+      "meets_recall_target (>=0.85)": false
+    },
+    {
+      "model": "cnn_bilstm",
+      "accuracy": 0.5416666666666666,
+      "precision": 0.3333333333333333,
+      "recall": 0.5714285714285714,
+      "f1": 0.42105263157894735,
+      "meets_recall_target (>=0.85)": false
+    }
+  ],
+  "mcnemar": [
+    {
+      "model_a": "logistic_regression",
+      "model_b": "random_forest",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "logistic_regression",
+      "model_b": "xgboost",
+      "statistic": 0.0,
+      "p_value": 0.5,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "logistic_regression",
+      "model_b": "cnn_bilstm",
+      "statistic": 1.0,
+      "p_value": 0.0703125,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "random_forest",
+      "model_b": "xgboost",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "random_forest",
+      "model_b": "cnn_bilstm",
+      "statistic": 1.0,
+      "p_value": 0.0390625,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "xgboost",
+      "model_b": "cnn_bilstm",
+      "statistic": 1.0,
+      "p_value": 0.021484375,
+      "significant_at_0.05": true
+    }
+  ],
+  "best_model_by_recall": "logistic_regression"
+}
